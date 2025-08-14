@@ -82,6 +82,22 @@ addButton.addEventListener('click', (event) => {
     todoInput.value = '';
     saveTodos();
 })
+const clearAllButton = document.querySelector('#clear-all-btn');
+clearAllButton.addEventListener('click', () => {
+    // 사용자에게 정말 삭제할 것인지 한 번 더 확인받는 것이 좋습니다.
+    const isConfirmed = confirm('정말 모든 할 일을 삭제하시겠습니까?');
+
+    if (isConfirmed) {
+        // 1. 화면의 모든 <li>를 지웁니다.
+        todoList.innerHTML = '';
+
+        // 2. localStorage의 데이터도 지웁니다.
+        localStorage.removeItem('todos');
+
+        // saveTodos()를 호출해서 빈 배열을 저장하는 방법도 동일하게 동작합니다.
+        saveTodos();
+    }
+});
 
 // --- 스크립트가 처음 실행될 때, 저장된 데이터를 불러옵니다. ---
 loadTodos();

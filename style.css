@@ -142,3 +142,31 @@ ul {
     color: #e74c3c;
     /* 마우스 올리면 빨간색으로 */
 }
+
+.clear-all-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: flex-end;
+    /* 버튼을 오른쪽으로 정렬 */
+}
+
+#clear-all-btn {
+    background-color: transparent;
+    /* 배경 투명하게 */
+    color: #e74c3c;
+    /* 위험을 알리는 붉은색 텍스트 */
+    border: 1px solid #e74c3c;
+    /* 붉은색 테두리 */
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+#clear-all-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+}
